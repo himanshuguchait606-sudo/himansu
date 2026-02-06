@@ -3,70 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rose Day ❤️</title>
-
+<title>Tap to Start</title>
 <link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="new.css">
 </head>
-
 <body>
 
-<!-- FULL SCREEN START BUTTON -->
-<button id="startBtn" onclick="startLove()">Tap to Start 💖</button>
+<audio id="bgMusic" src="music.mp3" preload="auto"></audio>
 
-<audio id="bgMusic" preload="auto" loop>
-    <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<div class="page" id="content" style="display:none;">
-
-    <section class="card">
-        <h1>🌹 Happy Rose Day 🌹</h1>
-        <h2>Sayanti ❤️</h2>
-        <p>
-            Aaj ka din thoda special hai,<br>
-            kyunki tum ho meri zindagi me 💕
-        </p>
-    </section>
-
-    <section class="card">
-        <h1>💌 Little Message</h1>
-        <p>
-            Tumhari ek smile meri duniya hai 😊<br><br>
-            Tum ho toh sab kuch perfect lagta hai ❤️
-        </p>
-    </section>
-
-    <section class="card hearts">
-        <h1>💖 Cute Hearts 💖</h1>
-        <p>Meri feelings sirf tumhare liye 🥺</p>
-    </section>
-
-    <section class="card">
-        <h1>🌸 Promise 🌸</h1>
-        <p>
-            Har din tumhe special feel karaunga 💞
-        </p>
-
-        <a href="new.html" class="nextPageBtn">Next Surprise 💌</a>
-    </section>
-
+<div id="startScreen">
+    <div class="tapText">Tap to Start ❤️</div>
 </div>
 
 <script>
-function startLove(){
-    const music = document.getElementById("bgMusic");
-    const btn = document.getElementById("startBtn");
-    const content = document.getElementById("content");
+const startScreen = document.getElementById("startScreen");
+const music = document.getElementById("bgMusic");
 
-    music.play().then(()=>{
-        btn.style.display = "none";
-        content.style.display = "block";
-        localStorage.setItem("playMusic","yes");
-    }).catch(()=>{
-        alert("Volume check karo 😡 music file issue ho sakta hai");
+startScreen.addEventListener("click", () => {
+    music.play().then(() => {
+        window.location.href = "new.html";
+    }).catch(() => {
+        window.location.href = "new.html";
     });
-}
+});
 </script>
 
 </body>

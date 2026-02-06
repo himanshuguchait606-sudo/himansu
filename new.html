@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Only You ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page">
+
+    <section class="card">
+        <h1>Only For You 💕</h1>
+        <p>
+            Tum meri aadat ban chuki ho ❤️<br><br>
+            Tumhari ek baat,<br>
+            mera poora din bana deti hai ✨
+        </p>
+    </section>
+
+    <section class="card">
+        <h1>🌹 Rose Day 🌹</h1>
+        <p>
+            Yeh rose sirf phool nahi,<br>
+            meri puri feelings hai tumhare liye 💖
+        </p>
+
+        <a href="index.html" class="nextPageBtn">Back 🌸</a>
+    </section>
+
+</div>
+
+<script>
+const music = document.getElementById("bgMusic");
+if(localStorage.getItem("musicPlaying")==="yes"){
+    music.play();
+}
+</script>
+
+</body>
+</html>

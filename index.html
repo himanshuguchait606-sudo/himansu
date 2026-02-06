@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose Day ❤️</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="new.css">
+</head>
+
+<body>
+
+<!-- TAP TO START SCREEN -->
+<div id="startScreen">
+    <h1>Tap to Start 💖</h1>
+</div>
+
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="page hidden">
+
+    <!-- SECTION 1 -->
+    <section class="card">
+        <h1>🌹 Happy Rose Day 🌹</h1>
+        <h2>Sayanti ❤️</h2>
+        <p>
+            Aaj ka din thoda special hai,<br>
+            kyunki tum ho meri zindagi me 💕
+        </p>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="card">
+        <h1>💌 Little Message</h1>
+        <p>
+            Tumhari ek smile…<br>
+            meri saari thakaan mita deti hai 😊<br><br>
+            Tum paas ho ya door,<br>
+            dil hamesha tumhare saath rehta hai ❤️
+        </p>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section class="card hearts">
+        <h1>💖 Cute Hearts 💖</h1>
+        <p>
+            Yeh hearts sirf animation nahi,<br>
+            meri feelings ka proof hai 🥺
+        </p>
+    </section>
+
+    <!-- SECTION 4 -->
+    <section class="card">
+        <h1>🌸 Promise 🌸</h1>
+        <p>
+            Rose Day pe promise karta hoon,<br>
+            har din tumhe special feel karaunga 💞
+        </p>
+
+        <!-- ✅ NAVIGATION BUTTON -->
+        <a href="new.html" class="nextPageBtn">Next Surprise 💌</a>
+    </section>
+
+</div>
+
+<script>
+const start = document.getElementById("startScreen");
+const music = document.getElementById("bgMusic");
+const page = document.querySelector(".page");
+
+start.addEventListener("click", () => {
+    music.play().then(()=>{
+        start.style.display = "none";
+        page.classList.remove("hidden");
+        localStorage.setItem("musicPlaying","yes");
+    });
+});
+</script>
+
+</body>
+</html>

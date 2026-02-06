@@ -1,0 +1,25 @@
+.card{
+    backdrop-filter:blur(10px);
+    box-shadow:0 0 35px rgba(255,80,120,0.6);
+    animation:float 6s ease-in-out infinite;
+}
+
+/* Hearts animation */
+.hearts::before{
+    content:"💖 💕 💗 💘 💞";
+    display:block;
+    font-size:28px;
+    margin-bottom:15px;
+    animation:hearts 4s infinite;
+}
+
+@keyframes hearts{
+    0%{opacity:0;transform:translateY(10px)}
+    50%{opacity:1}
+    100%{opacity:0;transform:translateY(-10px)}
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}

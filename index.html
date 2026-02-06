@@ -11,18 +11,15 @@
 
 <body>
 
-<!-- TAP TO START SCREEN -->
-<div id="startScreen">
-    <h1>Tap to Start 💖</h1>
-</div>
+<!-- FULL SCREEN START BUTTON -->
+<button id="startBtn" onclick="startLove()">Tap to Start 💖</button>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" preload="auto" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
-<div class="page hidden">
+<div class="page" id="content" style="display:none;">
 
-    <!-- SECTION 1 -->
     <section class="card">
         <h1>🌹 Happy Rose Day 🌹</h1>
         <h2>Sayanti ❤️</h2>
@@ -32,52 +29,44 @@
         </p>
     </section>
 
-    <!-- SECTION 2 -->
     <section class="card">
         <h1>💌 Little Message</h1>
         <p>
-            Tumhari ek smile…<br>
-            meri saari thakaan mita deti hai 😊<br><br>
-            Tum paas ho ya door,<br>
-            dil hamesha tumhare saath rehta hai ❤️
+            Tumhari ek smile meri duniya hai 😊<br><br>
+            Tum ho toh sab kuch perfect lagta hai ❤️
         </p>
     </section>
 
-    <!-- SECTION 3 -->
     <section class="card hearts">
         <h1>💖 Cute Hearts 💖</h1>
-        <p>
-            Yeh hearts sirf animation nahi,<br>
-            meri feelings ka proof hai 🥺
-        </p>
+        <p>Meri feelings sirf tumhare liye 🥺</p>
     </section>
 
-    <!-- SECTION 4 -->
     <section class="card">
         <h1>🌸 Promise 🌸</h1>
         <p>
-            Rose Day pe promise karta hoon,<br>
-            har din tumhe special feel karaunga 💞
+            Har din tumhe special feel karaunga 💞
         </p>
 
-        <!-- ✅ NAVIGATION BUTTON -->
         <a href="new.html" class="nextPageBtn">Next Surprise 💌</a>
     </section>
 
 </div>
 
 <script>
-const start = document.getElementById("startScreen");
-const music = document.getElementById("bgMusic");
-const page = document.querySelector(".page");
+function startLove(){
+    const music = document.getElementById("bgMusic");
+    const btn = document.getElementById("startBtn");
+    const content = document.getElementById("content");
 
-start.addEventListener("click", () => {
     music.play().then(()=>{
-        start.style.display = "none";
-        page.classList.remove("hidden");
-        localStorage.setItem("musicPlaying","yes");
+        btn.style.display = "none";
+        content.style.display = "block";
+        localStorage.setItem("playMusic","yes");
+    }).catch(()=>{
+        alert("Volume check karo 😡 music file issue ho sakta hai");
     });
-});
+}
 </script>
 
 </body>

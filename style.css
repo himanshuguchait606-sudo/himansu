@@ -5,12 +5,21 @@
     font-family:'Segoe UI',sans-serif;
 }
 
-body{
-    min-height:100vh;
-    background:url("background image.png") no-repeat center/cover fixed;
-    color:white;
+html, body{
+    width:100%;
+    height:100%;
 }
 
+body{
+    min-height:100svh; /* mobile safe height */
+    background-image:url("background image.png");
+    background-repeat:no-repeat;
+    background-position:center center;
+    background-size:cover;   /* 🔥 FULL background */
+    background-attachment:scroll; /* ❌ fixed hata diya */
+    color:white;
+    overflow-x:hidden;
+}
 /* Start screen */
 #startScreen{
     position:fixed;
@@ -36,7 +45,7 @@ body{
 
 /* Card */
 .card{
-    background:rgba(0,0,0,0.55);
+    background:rgba(0,0,0,0.6);
     margin:35px auto;
     padding:30px 24px;
     width:90%;
@@ -67,3 +76,4 @@ p{font-size:16px;line-height:1.8;margin-top:15px}
     0%,100%{transform:scale(1)}
     50%{transform:scale(1.1)}
 }
+
